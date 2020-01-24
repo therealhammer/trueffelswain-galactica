@@ -5,6 +5,8 @@ using UnityEngine;
 public class pigletScript : MonoBehaviour
 {
     public GameObject laser;
+    public GameObject meteor1;
+    public GameObject meteor2;
     public SpriteRenderer feuer;
     public static Rigidbody2D pigr2d;
     public float cooldown;
@@ -17,6 +19,11 @@ public class pigletScript : MonoBehaviour
     void Start()
     {
         pigr2d = GetComponent<Rigidbody2D>();
+        for(int i = 0; i < 40; i++)
+        {
+            Instantiate(meteor1, new Vector3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), 0), Quaternion.identity);
+            Instantiate(meteor2, new Vector3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), 0), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
